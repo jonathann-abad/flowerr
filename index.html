@@ -161,58 +161,140 @@
       .flower__leafs--3 {
         animation-delay: 1.7s;
       }
-      .flower__leafs::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translate(-50%, -100%);
-        width: 8vmin;
-        height: 8vmin;
-        background-color: #6bf0ff;
-        filter: blur(10vmin);
-      }
-      .flower__leaf {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 8vmin;
-        height: 11vmin;
-        border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-        background-color: #FF878D;
-        background-image: linear-gradient(to top, #ff8086, #FF878D);
-        transform-origin: bottom center;
-        opacity: 0.9;
-        box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
-      }
-      .flower__leaf--1 {
-        transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
-      }
-      .flower__leaf--2 {
-        transform: translate(-50%, -4%) rotateX(40deg);
-      }
-      .flower__leaf--3 {
-        transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
-      }
-      .flower__leaf--4 {
-        width: 8vmin;
-        height: 8vmin;
-        transform-origin: bottom left;
-        border-radius: 4vmin 10vmin 4vmin 4vmin;
-        transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-        background-image: linear-gradient(to top, #ff8086, #FF878D);
-        z-index: 1;
-        opacity: 0.8;
-      }
-      .flower__white-circle {
-        position: absolute;
-        left: -3.5vmin;
-        top: -3vmin;
-        width: 9vmin;
-        height: 4vmin;
-        border-radius: 50%;
-        background-color: #fff;
-      }
+      
+/* Soft pink glow behind each tulip */
+.flower__leafs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -3vmin;
+  transform: translate(-50%, -50%);
+  width: 16vmin;
+  height: 16vmin;
+  border-radius: 50%;
+  background: rgba(255, 112, 164, 0.25);
+  filter: blur(5vmin);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Base tulip petal */
+.flower__leaf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: 8.5vmin;
+  height: 13vmin;
+
+  border-radius:
+    48% 48% 38% 38% /
+    58% 58% 24% 24%;
+
+  background: linear-gradient(
+    110deg,
+    #c83d70 0%,
+    #ef6f9a 24%,
+    #ffb3cb 57%,
+    #f477a2 82%,
+    #d64d7d 100%
+  );
+
+  transform-origin: bottom center;
+  opacity: 1;
+
+  box-shadow:
+    inset 1vmin 0 1.5vmin rgba(255,255,255,0.16),
+    inset -0.8vmin -1vmin 1.5vmin rgba(137,22,65,0.2),
+    0 0 1vmin rgba(255,120,170,0.12);
+}
+
+/* Left outer petal */
+.flower__leaf--1 {
+  height: 12vmin;
+  transform:
+    translate(-88%, -1%)
+    rotate(-38deg);
+
+  z-index: 1;
+}
+
+/* Tall center/back petal */
+.flower__leaf--2 {
+  height: 14vmin;
+  width: 9vmin;
+
+  transform:
+    translate(-50%, -10%)
+    rotate(0deg);
+
+  z-index: 0;
+}
+
+/* Right outer petal */
+.flower__leaf--3 {
+  height: 12vmin;
+
+  transform:
+    translate(-12%, -1%)
+    rotate(38deg);
+
+  z-index: 1;
+}
+
+/* Front petal creates the tulip cup */
+.flower__leaf--4 {
+  width: 11vmin;
+  height: 8vmin;
+
+  border-radius:
+    40% 40% 48% 48% /
+    65% 65% 35% 35%;
+
+  transform:
+    translate(-50%, 12%)
+    rotate(0deg);
+
+  background: linear-gradient(
+    to top,
+    #d64d7d 0%,
+    #f57ba3 45%,
+    #ffb0c9 100%
+  );
+
+  z-index: 3;
+
+  box-shadow:
+    inset 0 -1vmin 1.5vmin rgba(140, 30, 70, 0.2),
+    inset 0 0.6vmin 1vmin rgba(255,255,255,0.2);
+}
+
+/* Small dark center instead of white circle */
+.flower__white-circle {
+  position: absolute;
+  left: -2.1vmin;
+  top: -1.4vmin;
+
+  width: 4.2vmin;
+  height: 2vmin;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse at center,
+    #f9c765 0%,
+    #b65a48 38%,
+    #87344e 75%,
+    #6b2847 100%
+  );
+
+  transform: rotate(-3deg);
+  z-index: 2;
+
+  box-shadow:
+    0 0 0.6vmin rgba(255, 172, 99, 0.25);
+}
+
       .flower__white-circle::after {
         content: "";
         position: absolute;
