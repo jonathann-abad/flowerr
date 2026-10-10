@@ -330,8 +330,8 @@
           linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
       }
       .flower__line {
-        width: 1.2vmin;
-        border-radius: 1vmin;
+        height: 55vmin;
+        width: 1.5vmin;
         background-image: linear-gradient(
             to left,
             rgba(0, 0, 0, 0.2),
@@ -343,14 +343,15 @@
         animation: grow-flower-tree 4s backwards;
       }
       .flower__line__leaf {
-        --w: 6vmin;
-        --h: 17vmin;
+        --w: 7vmin;
+        --h: calc(var(--w) + 2vmin);
         position: absolute;
         top: 20%;
         left: 90%;
         width: var(--w);
         height: var(--h);
-        border-radius: 100% 0 100% 0;
+        border-top-right-radius: var(--h);
+        border-bottom-left-radius: var(--h);
         background-image: linear-gradient(
           to top,
           rgba(20, 117, 122, 0.4),
