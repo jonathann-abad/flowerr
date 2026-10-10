@@ -240,36 +240,47 @@
 
 /* FRONT LOWER PETAL — larger and fuller */
 .flower__leaf--4 {
-  width: 12vmin;
-  height: 10.5vmin;
 
   position: absolute;
+
   bottom: 0;
+
   left: 50%;
+
+  width: 12vmin;
+
+  height: 8.5vmin;
 
   transform-origin: bottom center;
 
-  border-radius:
-    48% 48% 46% 46% /
-    60% 60% 38% 38%;
+  transform: translate(-50%, 13%);
 
-  transform:
-    translate(-50%, 16%)
-    rotate(0deg);
+  border-radius: 46% 46% 42% 42% /
+
+                 48% 48% 30% 30%;
 
   background-image: linear-gradient(
+
     to top,
+
     #d64d7d 0%,
+
     #f477a2 55%,
+
     #ffb3cb 100%
+
   );
 
   box-shadow:
-    inset 0 -1vmin 1.5vmin rgba(140, 30, 70, 0.18),
-    inset 0 0.5vmin 1vmin rgba(255, 255, 255, 0.2);
+
+    inset 0 -0.8vmin 1.3vmin rgba(140, 30, 70, 0.18),
+
+    inset 0 0.4vmin 0.8vmin rgba(255, 255, 255, 0.2);
 
   z-index: 3;
+
   opacity: 1;
+
 }
 
 
